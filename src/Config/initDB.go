@@ -1,12 +1,8 @@
-package main
+package Config
 
 import (
 	"database/sql"
-	"fmt"
-	_ "github.com/go-sql-driver/mysql"
 )
-
-
 
 var db *sql.DB
 
@@ -22,13 +18,4 @@ func initDB() (err error) {
 	}
 	defer db.Close()
 	return err
-}
-
-func main() {
-	err:=initDB()
-	if err!=nil{
-		fmt.Println("init db failed , err: %v\n",err)
-		return
-	}
-
 }
